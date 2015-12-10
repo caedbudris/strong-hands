@@ -1,0 +1,72 @@
+<%= provide(:title, "Order Barbell Balm") %>
+<div class="checkout">
+  <h1>Order Barbell Balm</h1>
+  
+  <form action="" method=POST id="payment-form">
+      <span class="payment-errors"></span>
+      <ul>
+          <li class="form">
+              <label>
+                  Quantity
+                  <input type="text" size="3" name="amount" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  Card Number
+                  <input type="text" size="20" data-stripe="number" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  CVC
+                  <input type="text" size="4" data-stripe="cvc" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  Expiration (MM/YYYY)
+                  <input type="text" size="2" data-stripe="exp-month" />
+                  <input type="text" size="4" date-stripe="exp-year" />
+              </label>
+          </li>
+          <li class="form">
+              <input type="submit" class="button" id="paySubmit" />
+          </li>
+      </ul>
+  </form>
+</div>
+
+<script type="text/javascript">
+  
+  jQuery(function($) {
+      $('#payment-form').submit(function(event) {
+          
+          var $form = $(this);
+          
+          $form.find('#paySubmit').prop('disabled', true);
+          
+          Stripe.card.createToken($form, stripeResponseHandler);
+          
+          return false;
+      });
+  });
+  
+  function stripeResponseHandler(status, response) {
+      var $form = $('#payment-form');
+      
+      if response.error() {
+          $form.find('.payment-errors').text(response.error.message);
+          $form.find('#paySubmit').prop('disabled', false);
+      } else {
+          var token = response.id
+          
+          $form.append('<input type="hidden" name="stripeToken" />').val(token));
+          
+          $form.get(0).submit();
+      }
+  }
+</script>

@@ -1,0 +1,139 @@
+$shblue: #005386;
+$shbeige: #e3dcc9;
+$shred: #be1e2d;
+
+html body {
+    margin:0;
+    padding:0;
+    background-color:$shblue;
+}
+
+.header {
+    width:400px;
+    margin:0 auto;
+    background-image:url('bluelogo.jpg');
+    height:200px;
+}
+
+.footer {
+    width:100%;
+    background-color:$shred;
+    color:$shbeige;
+    font-family:sans-serif;
+    position:absolute;
+    bottom:0;
+    .left-links {
+        list-style-type:none;
+        li {
+            margin-top:10px;
+        }
+    }
+    a {
+        text-decoration:none;
+        color:$shbeige;
+        &:hover {
+            font-weight:bold;
+        }
+    }
+}
+
+/* home page full */
+
+.top {
+    width:100%;
+}
+
+/* home page top-left */
+
+.jumbotron {
+    background-image:url('jumbopic.jpg');
+    width:1000px;
+    height:563px;
+    background-repeat:no-repeat;
+    float:left;
+    border:2px solid $shred;
+    border-radius:10px;
+    h1 {
+        font-size:80px;
+        font-family:sans-serif;
+        margin:0;
+        color:white;
+    }
+    h3 {
+        font-size:100px;
+        font-family:sans-serif;
+        margin-top:80px;
+        margin-left:80px;
+        color:white;
+    }
+}
+
+/* home page top-right */
+
+.why {
+    float:right;
+    font-family:sans-serif;
+    color:$shbeige;
+    margin-right:20px;
+    width:500px;
+    h1 {
+        font-size:60px;
+        margin-bottom:0;
+    }
+    ul {
+        padding:0;
+    }
+    li {
+        margin-top:30px;
+        font-size:30px;
+    }
+}
+
+/* button object */
+
+.button {
+    background-color:$shred;
+    text-decoration:none;
+    color:$shbeige;
+    font-family:sans-serif;
+    font-size:30px;
+    padding:4px;
+    text-align:center;
+    border-radius:5px;
+    &:hover {
+        background-color:#dc2334;
+    }
+}
+
+/* description of balm */
+
+.description {
+    float:left;
+    width:100%;
+    text-align:center;
+    font-family:sans-serif;
+    color:$shbeige;
+    font-size:30px;
+    ul {
+        padding:0;
+    }
+    ul li {
+        display:inline-block;
+        width:500px;
+        padding:30px;
+    }
+}
+
+.checkout {
+    width:1000px;
+    height:500px;
+    margin:0 auto;
+    background-color:white;
+    font-family:sans-serif;
+    h1 {
+        font-size:80px;
+        text-align:center;
+        color:$shred;
+        margin:0;
+    }
+}
