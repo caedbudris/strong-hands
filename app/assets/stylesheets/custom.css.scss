@@ -124,9 +124,35 @@ html body {
     }
 }
 
+/* testimonials */
+.testimonials {
+    float:left;
+    width:100%;
+    text-align:center;
+    font-family:sans-serif;
+    color:$shbeige;
+    ul {
+        list-style-type:none;
+        padding:0;
+        li {
+            font-size:30px;
+            width:1200px;
+            margin:0 auto;
+            margin-top:50px;
+            .quoteperson {
+                float:right;
+            }
+        }
+    }
+    h1 {
+        font-size:60px;
+        margin-bottom:0;
+    }
+}
+
 .checkout {
-    width:1000px;
-    height:500px;
+    width:1200px;
+    height:800px;
     margin:0 auto;
     background-color:white;
     font-family:sans-serif;
@@ -135,5 +161,79 @@ html body {
         text-align:center;
         color:$shred;
         margin:0;
+    }
+    .info {
+        display:inline;
+        float:left;
+        color:$shblue;
+        width:750px;
+        margin-top:20px;
+        p {
+            font-weight:bold;
+        }
+        h3 {
+            font-size:40px;
+            margin-bottom:0;
+        }
+        .price {
+            text-align:center;
+            float:left;
+            width:350px;
+            .tube {
+                background-image:url('bbphoto.jpg');
+                margin:0 auto;
+                height:499px;
+                width:282px;
+            }
+        }
+        .shipping {
+            color:$shred;
+            float:right;
+            h2 {
+                font-size:50px;
+                margin-bottom:10px;
+            }
+            p {
+                font-size:20px;
+            }
+        }
+    }
+    .payment-errors {
+        background-color:$shred;
+        opacity:0.8;
+        color:white;
+    }
+    #payment-form {
+        float:right;
+        margin-right:70px;
+        margin-top:20px;
+        display:inline;
+    }
+    ul {
+        list-style-type:none;
+        li {
+            margin-top:15px;
+            color:$shblue;
+            font-weight:bold;
+        }
+    }
+}
+
+.congrats {
+    width:1024px;
+    height:768px;
+    font-family:sans-serif;
+    color:white;
+    text-align:center;
+    margin:0 auto;
+    background-image:url('pyrros.jpg');
+    border: 3px $shred solid;
+    h1 {
+        font-size:100px;
+        margin-top:0;
+    }
+    p {
+        font-size:50px;
+        margin-top:25px;
     }
 }
