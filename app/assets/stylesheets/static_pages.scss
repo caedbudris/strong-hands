@@ -1,3 +1,108 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$shblue: #005386;
+$shbeige: #e3dcc9;
+$shred: #be1e2d;
+
+/* mobile home */
+.mobile {
+    .top {
+    width:100%;
+}
+
+.jumbotron {
+    background-image:url('jumbopic.jpg');
+    width:1000px;
+    height:563px;
+    background-repeat:no-repeat;
+    border:2px solid $shred;
+    border-radius:10px;
+    h1 {
+        font-size:80px;
+        font-family:sans-serif;
+        margin:0;
+        color:white;
+    }
+    h3 {
+        font-size:100px;
+        font-family:sans-serif;
+        margin-top:80px;
+        margin-left:80px;
+        color:white;
+    }
+}
+
+.why {
+    font-family:sans-serif;
+    color:$shbeige;
+    width:100%;
+    margin:0 auto;
+    h1 {
+        font-size:60px;
+        margin-bottom:0;
+    }
+    ul {
+        padding:0;
+    }
+    li {
+        display:inline;
+        font-size:30px;
+    }
+}
+
+.button {
+    background-color:$shred;
+    text-decoration:none;
+    color:$shbeige;
+    font-family:sans-serif;
+    font-size:30px;
+    padding:4px;
+    text-align:center;
+    border-radius:5px;
+    &:hover {
+        background-color:#dc2334;
+    }
+}
+
+.description {
+    width:100%;
+    text-align:center;
+    font-family:sans-serif;
+    color:$shbeige;
+    font-size:30px;
+    ul {
+        padding:0;
+    }
+    ul li {
+        display:inline-block;
+        width:400px;
+        padding:30px;
+    }
+}
+
+.testimonials {
+    width:100%;
+    text-align:center;
+    font-family:sans-serif;
+    color:$shbeige;
+    ul {
+        list-style-type:none;
+        padding:0;
+        li {
+            font-size:30px;
+            width:100%;
+            margin:0 auto;
+            margin-top:50px;
+            .quoteperson {
+                float:right;
+            }
+        }
+    }
+    h1 {
+        font-size:60px;
+        margin-bottom:0;
+    }
+}
+}

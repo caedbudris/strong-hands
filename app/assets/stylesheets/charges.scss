@@ -1,3 +1,56 @@
 // Place all the styles related to the charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$shblue: #005386;
+$shbeige: #e3dcc9;
+$shred: #be1e2d;
+
+.mobile {
+    .checkout {
+        height:2600px;
+        .price {
+            margin:0 auto;
+            color:$shblue;
+            text-align:center;
+            h3 {
+                font-size:70px;
+                margin:0;
+            }
+            p {
+                font-size:50px;
+                margin:0;
+            }
+            .tube {
+                background-image:url('bbphotomobile.jpg');
+                background-repeat:no;
+                height:1000px;
+                width:563px;
+                margin:0 auto;
+            }
+        }
+        .shipping {
+            color:$shred;
+            text-align:center;
+            h2 {
+                font-size:70px;
+            }
+            p {
+                font-size:50px;
+            }
+        }
+        .payment-errors {
+            background-color:$shred;
+            opacity:0.8;
+            color:white;
+        }
+        #payment-form {
+            font-size:50px;
+            input[type=text], select {
+                font-size:50px;
+            }
+        }
+    }
+}
+
+

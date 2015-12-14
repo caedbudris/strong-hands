@@ -1,0 +1,133 @@
+<%= provide(:title, "Order Barbell Balm") %>
+
+<script type="text/javascript">
+  
+  function stripeResponseHandler(status, response) {
+      var $form = $('#payment-form');
+      
+      if (response.error) {
+          $form.find('.payment-errors').text(response.error.message);
+          $form.find('#paySubmit').prop('disabled', false);
+      } else {
+          var token = response.id;
+          
+          $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+          
+          $form.get(0).submit();
+      };
+  };
+  
+  jQuery(function($) {
+      $('#payment-form').submit(function(event) {
+          
+          var $form = $(this);
+          
+          $form.find('#paySubmit').prop('disabled', true);
+          
+          Stripe.card.createToken($form, stripeResponseHandler);
+          
+          return false;
+      });
+  });
+  
+</script>
+
+<div class="mobile">
+<div class="checkout">
+  <h1>Order Barbell Balm</h1>
+  
+    <div class="price">
+      <div class="tube"></div>
+      <h3>$10.00</h3>
+      <p>per tube</p>
+    </div>
+    <div class="shipping">
+      <h2>Shipping</h2>
+      <p>United States: $3.00</p>
+      <p>Canada: $10.00</p>
+    </div>
+  
+  <form action="/charges" method=POST id="payment-form">
+      <span class="payment-errors"></span>
+      <ul>
+          <li class="form">
+              <label>
+                  Quantity
+                  <input type="text" size="3" name="amount" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  Name
+                  <input type="text" size="20" data-stripe="name" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  Address
+                  <input type="text" size="20" data-stripe="address_line1" placeholder="EX: 123 Swole Ave"/>
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  City
+                  <input type="text" size="20" data-stripe="address_city" placeholder="EX: Chicago" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  State
+                  <input type="text" size="20" data-stripe="address_state" placeholder="EX: Illinois" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  Zip Code
+                  <input type="text" size="20" data-stripe="address_zip" placeholder="EX: 30021" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  Country
+                  <select data-stripe="address_country" name="shipping">
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                  </select>
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  Card Number
+                  <input type="text" size="20" data-stripe="number" placeholder="EX: 4242424242424242" />
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  CVC
+                  <input type="text" size="4" data-stripe="cvc" placeholder="EX: 323"/>
+              </label>
+          </li>
+          
+          <li class="form">
+              <label>
+                  Expiration (MM/YYYY)
+                  <input type="text" size="2" data-stripe="exp-month" />
+              </label>
+                  <span> / </span>
+                  <input type="text" size="4" data-stripe="exp-year"/>
+          </li>
+          <li class="form">
+              <input type="submit" class="button" id="paySubmit" />
+          </li>
+      </ul>
+  </form>
+</div>
+</div>
