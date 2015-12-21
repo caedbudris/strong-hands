@@ -48,7 +48,17 @@ $shred: #be1e2d;
             font-size:50px;
             input[type=text], select {
                 font-size:50px;
+                border-radius:10px;
+                border: 2px black solid;
+                &:focus {
+                    border: 2px $shred solid;
+                    outline:none;
+                }
             }
+            .button {
+                font-size:70px;
+        
+            }    
         }
     }
 }

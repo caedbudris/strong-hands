@@ -20,8 +20,7 @@ html body {
     background-color:$shred;
     color:$shbeige;
     font-family:sans-serif;
-    position:absolute;
-    bottom:0;
+    float:left;
     .left-links {
         list-style-type:none;
         li {
@@ -311,6 +310,14 @@ html body {
         margin-right:70px;
         margin-top:20px;
         display:inline;
+        input[type=text] {
+            border-radius:5px;
+            border: 1px black solid;
+            &:focus {
+                border: 1px $shred solid;
+                outline:none;
+            }
+        }
     }
     ul {
         list-style-type:none;
