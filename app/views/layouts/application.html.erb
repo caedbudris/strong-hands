@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Strong Hands || <%= yield(:title) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script>Stripe.api_key = "sk_live_1og7FHTRNCoBsE3X4ccqGM31"</script>
+  <script>Stripe.setPublishableKey('pk_live_rq6l4GTMpih0OwHXMtd7ZEFZ');</script>
+</head>
+<body>
+<%= render 'layouts/header' %>
+<%= yield %>
+</body>
+</html>
