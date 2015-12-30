@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 
-/app/views/layouts/.application.html.erb
+/config/initializers/.stripe.rb
